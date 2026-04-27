@@ -36,16 +36,46 @@ public class Main {
             }
         });
 
-        frame.setLayout(new GridLayout(5, 2, 10, 10));
-        frame.add(nameLabel);
-        frame.add(nameField);
-        frame.add(emailLabel);
-        frame.add(emailField);
-        frame.add(passwordLabel);
-        frame.add(passwordField);
-        frame.add(registerButton);
-        frame.add(new JLabel(""));
-        frame.add(resultLabel);
+        frame.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weightx = 0;
+        frame.add(nameLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.weightx = 1;
+        frame.add(nameField, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.weightx = 0;
+        frame.add(emailLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.weightx = 1;
+        frame.add(emailField, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.weightx = 0;
+        frame.add(passwordLabel, gbc);
+
+        gbc.gridx = 1;
+        gbc.weightx = 1;
+        frame.add(passwordField, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1;
+        frame.add(registerButton, gbc);
+
+        gbc.gridy = 4;
+        frame.add(resultLabel, gbc);
 
         frame.setVisible(true);
     }
