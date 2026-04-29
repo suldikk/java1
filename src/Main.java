@@ -31,6 +31,14 @@ public class Main {
 
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 resultLabel.setText("Заполните все поля");
+            } else if (!name.matches("[A-Za-z]+")) {
+                resultLabel.setText("Имя должно быть только на английском");
+            } else if (!email.matches("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+")) {
+                resultLabel.setText("Email должен быть на английском и содержать @");
+            } else if (password.length() < 6) {
+                resultLabel.setText("Пароль должен быть минимум 6 символов");
+            } else if (!password.matches("[A-Za-z0-9]+")) {
+                resultLabel.setText("Пароль должен быть только на английском");
             } else {
                 resultLabel.setText("Пользователь " + name + " зарегистрирован!");
             }
