@@ -2,3 +2,5 @@ out/
 *.class
 .vscode/
 .idea/
+users.csv
+users.txt
